@@ -150,6 +150,16 @@
     .popular-card h3 { margin-bottom: 6px; font-size: 1.05rem; }
     .popular-card p { font-size: .88rem; }
 
+    /* Фотогалерея */
+    .gallery-section { background: var(--cream); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .gallery-card { overflow: hidden; margin: 0; border: 1px solid rgba(35, 70, 56, .08); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); }
+    .gallery-card img { width: 100%; height: 330px; object-fit: cover; transition: transform .35s ease; }
+    .gallery-card:hover img { transform: scale(1.04); }
+    .gallery-caption { padding: 18px 20px 20px; }
+    .gallery-caption h3 { margin-bottom: 6px; }
+    .gallery-caption p { margin: 0; color: var(--muted); font-size: .92rem; }
+
     /* Контакты */
     .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 54px; align-items: start; }
     .contact-copy p { color: var(--muted); }
@@ -186,6 +196,7 @@
       .hero-image { height: 390px; }
       .plant-grid { grid-template-columns: repeat(2, 1fr); }
       .popular-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
       .about-grid, .contact-grid { gap: 32px; }
     }
     @media (max-width: 650px) {
@@ -200,7 +211,8 @@
       .hero-image { height: 330px; border-radius: 38% 38% 18px 18px; }
       .image-note { right: 8px; bottom: 12px; max-width: 190px; }
       .about-image { height: 280px; }
-      .benefits, .care-grid, .plant-grid, .popular-grid { grid-template-columns: 1fr; }
+      .benefits, .care-grid, .plant-grid, .popular-grid, .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-card img { height: 260px; }
       .plant-card img { height: 240px; }
       .plant-content p { min-height: 0; }
       .popular-card img { width: 84px; height: 84px; flex-basis: 84px; }
@@ -227,6 +239,7 @@
           <li><a href="#catalog">Каталог</a></li>
           <li><a href="#care">Уход</a></li>
           <li><a href="#popular">Популярное</a></li>
+          <li><a href="#gallery">Галерея</a></li>
           <li><a href="#contacts">Контакты</a></li>
         </ul>
       </nav>
@@ -247,7 +260,7 @@
           </div>
         </div>
         <div class="hero-image-wrap">
-          <img class="hero-image" src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Зелёные комнатные растения в светлом уютном интерьере" fetchpriority="high">
+          <img class="hero-image" src="images/hero.jpg" alt="Зелёные комнатные растения в светлом уютном интерьере" fetchpriority="high">
           <div class="image-note"><strong>Растите в своём темпе</strong>Простые советы для начинающих цветоводов</div>
         </div>
       </div>
@@ -256,7 +269,7 @@
     <!-- О проекте -->
     <section class="section" id="about" aria-labelledby="about-title">
       <div class="container about-grid">
-        <img class="about-image" src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Коллекция комнатных растений в горшках на полке" loading="lazy">
+        <img class="about-image" src="images/about.jpg" alt="Коллекция комнатных растений в горшках на полке" loading="lazy">
         <div class="about-copy">
           <p class="eyebrow">О проекте</p>
           <h2 id="about-title">Зелёный уголок начинается здесь</h2>
@@ -296,7 +309,7 @@
         </div>
         <div class="plant-grid">
           <article class="plant-card">
-            <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Монстера с крупными зелёными листьями" loading="lazy">
+            <img src="images/monstera.jpg" alt="Монстера с крупными зелёными листьями" loading="lazy">
             <div class="plant-content">
               <span class="tag">Рассеянный свет</span>
               <h3>Монстера</h3>
@@ -305,7 +318,7 @@
             </div>
           </article>
           <article class="plant-card">
-            <img src="https://images.unsplash.com/photo-1593482892290-f54927ae2b0b?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Сансевиерия с длинными вертикальными листьями" loading="lazy">
+            <img src="images/sansevieria.jpg" alt="Сансевиерия с длинными вертикальными листьями" loading="lazy">
             <div class="plant-content">
               <span class="tag">Неприхотливое</span>
               <h3>Сансевиерия</h3>
@@ -314,7 +327,7 @@
             </div>
           </article>
           <article class="plant-card">
-            <img src="https://images.unsplash.com/photo-1593691509543-c55fb32e5cee?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Спатифиллум с зелёными листьями" loading="lazy">
+            <img src="images/spathiphyllum.jpg" alt="Спатифиллум с зелёными листьями" loading="lazy">
             <div class="plant-content">
               <span class="tag">Любит влагу</span>
               <h3>Спатифиллум</h3>
@@ -323,7 +336,7 @@
             </div>
           </article>
           <article class="plant-card">
-            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Зелёное комнатное растение в горшке" loading="lazy">
+            <img src="images/chlorophytum.jpg" alt="Зелёное комнатное растение в горшке" loading="lazy">
             <div class="plant-content">
               <span class="tag">Для начинающих</span>
               <h3>Хлорофитум</h3>
@@ -373,17 +386,51 @@
         </div>
         <div class="popular-grid">
           <article class="popular-card">
-            <img src="https://images.unsplash.com/photo-1509423350716-97f9360b4e09?auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Листья потоса" loading="lazy">
+            <img src="images/pothos.jpg" alt="Листья потоса" loading="lazy">
             <div><h3>Потос</h3><p>Вьющееся растение, подходящее для полок и подвесных кашпо.</p></div>
           </article>
           <article class="popular-card">
-            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Небольшое растение в горшке" loading="lazy">
+            <img src="images/philodendron.jpg" alt="Небольшое растение в горшке" loading="lazy">
             <div><h3>Филодендрон</h3><p>Разнообразная группа растений с выразительной листвой.</p></div>
           </article>
           <article class="popular-card">
-            <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Комнатное растение в декоративном горшке" loading="lazy">
+            <img src="images/zamioculcas.jpg" alt="Комнатное растение в декоративном горшке" loading="lazy">
             <div><h3>Замиокулькас</h3><p>Растение с глянцевыми листьями, предпочитающее умеренный полив.</p></div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Фотогалерея -->
+    <section class="section gallery-section" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Фотогалерея</p>
+          <h2 id="gallery-title">Зелёные уголки вдохновения</h2>
+          <p class="lead">Три новые фотографии из рабочей папки проекта, добавленные с помощью AI-агента.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-card">
+            <img src="images/gallery1.jpg" alt="Потос с пёстрыми листьями в светлом интерьере" loading="lazy">
+            <figcaption class="gallery-caption">
+              <h3>Потос</h3>
+              <p>Быстрорастущая лиана, которая красиво смотрится на полке или в подвесном кашпо.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="images/gallery2.jpg" alt="Крупные резные листья монстеры" loading="lazy">
+            <figcaption class="gallery-caption">
+              <h3>Монстера</h3>
+              <p>Акцентное растение для светлой комнаты: любит опору, рассеянный свет и умеренный полив.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="images/gallery3.jpg" alt="Хлорофитум с узкими зелёными листьями" loading="lazy">
+            <figcaption class="gallery-caption">
+              <h3>Хлорофитум</h3>
+              <p>Неприхотливый вариант для начинающих: переносит редкий полив и быстро разрастается.</p>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -419,7 +466,7 @@
             <label for="message">Сообщение</label>
             <textarea id="message" name="message" placeholder="Напишите ваше сообщение..." required></textarea>
           </div>
-          <button class="button" type="submit">Проверить заполнение</button>
+          <button class="button" type="submit">Отправить сообщение</button>
           <p class="form-note">Демонстрационная форма: данные не отправляются и не сохраняются. Браузер проверит обязательные поля перед отправкой формы.</p>
         </form>
       </div>
