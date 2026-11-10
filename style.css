@@ -216,3 +216,28 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
     }
+
+
+/* Уведомление об автоматическом обновлении сайта через CI/CD */
+.deploy-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: var(--green-dark);
+  color: var(--white);
+  font-size: 14px;
+  letter-spacing: .02em;
+  text-align: center;
+}
+
+.deploy-note::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #8fd18f;
+  box-shadow: 0 0 0 4px rgba(143, 209, 143, .18);
+}
